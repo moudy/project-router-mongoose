@@ -66,4 +66,41 @@ describe('CRUD', function () {
     });
   });
 
+  describe('update', function () {
+    var userName = 'Foo';
+    beforeEach(createModel(User, {name: userName}, 'user'));
+
+    it('creates a user', function (done) {
+      var newUserName = 'Bar';
+      var user = this.user;
+      var data = {name: newUserName};
+
+      expect(user.name).to.eq(userName);
+
+      supertest(app)
+        .put('/users/'+user.id)
+        .set('Accept', 'application/json')
+        .send({ user: data })
+        .end(function (err, res) {
+          expect(res.body.user.name).to.eq(newUserName);
+          done();
+        });
+    });
+  });
+
+  describe('delete', function () {
+    beforeEach(createModel(User, {name: 'Foo'}, 'user'));
+    beforeEach(expectCount(User, 1));
+
+    it('creates a user', function (done) {
+
+      supertest(app)
+        .delete('/users/'+this.user.id)
+        .set('Accept', 'application/json')
+        .end(function (err, res) {
+          expectCount(User, 0)(done);
+        });
+    });
+  });
+
 });
