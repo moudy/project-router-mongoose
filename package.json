@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.1.2",
-    "project-router": "0.0.4",
+    "project-router": "0.0.5",
     "rsvp": "^3.0.6"
   },
   "devDependencies": {
