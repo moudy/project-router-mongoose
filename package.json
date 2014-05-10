@@ -1,6 +1,6 @@
 {
   "name": "project-router-mongoose",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Rest routes for project-router with mongoose models",
   "main": "index.js",
   "scripts": {
