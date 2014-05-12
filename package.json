@@ -9,11 +9,11 @@
   "author": "Moudy",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.1.2",
-    "project-router": "0.0.7",
     "rsvp": "^3.0.6"
   },
   "devDependencies": {
+    "express": "^4.1.2",
+    "project-router": "0.0.7",
     "body-parser": "^1.0.2",
     "chai": "^1.9.1",
     "ejs": "^1.0.0",

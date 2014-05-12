@@ -1,4 +1,11 @@
+var projectRouter = require('project-router');
 var projectRouterMongoose = require('../index');
+
+projectRouter.routeGenerator(function (options) {
+  var route = projectRouterMongoose[options.action];
+  return route || projectRouter.Route;
+});
+
 var expect = require('chai').expect;
 var sinon = require('sinon');
 var supertest = require('supertest');
@@ -6,7 +13,7 @@ var supertest = require('supertest');
 var app = require('./app');
 var User = require('./user');
 
-var router = projectRouterMongoose.map(function () {
+var router = projectRouter.map(function () {
   this.resource('users', {resource: User});
 });
 
