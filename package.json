@@ -1,7 +1,8 @@
 {
   "name": "project-router-mongoose",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Rest routes for project-router with mongoose models",
+  "repository": "git@github.com:moudy/project-router-mongoose.git",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -13,7 +14,7 @@
   },
   "devDependencies": {
     "express": "^4.1.2",
-    "project-router": "0.0.7",
+    "project-router": "0.0.9",
     "body-parser": "^1.0.2",
     "chai": "^1.9.1",
     "ejs": "^1.0.0",
